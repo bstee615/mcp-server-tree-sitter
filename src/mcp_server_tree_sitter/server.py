@@ -3,7 +3,7 @@
 import os
 from typing import Any, Dict, Optional, Tuple
 
-from mcp.server.fastmcp import FastMCP
+from fastmcp import FastMCP
 
 from .bootstrap import get_logger, update_log_levels
 from .config import ServerConfig
@@ -163,7 +163,7 @@ def main() -> None:
 
     # Run the server
     logger.info("Starting MCP Tree-sitter Server")
-    mcp.run()
+    mcp.run(transport="streamable-http")
 
 
 if __name__ == "__main__":
